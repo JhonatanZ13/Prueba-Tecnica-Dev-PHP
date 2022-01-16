@@ -7,7 +7,9 @@ include_once '../view/partials/navbar.php';
     <br>
     <div class="row">
         <div class="col-sm-12 mb-3">
-            <button class="btn btn-primary float-end"><i class="fas fa-user-plus"></i> Crear</button>
+            <a href="<?php echo getUrl('Form','Form','create') ?>">
+                <button class="btn btn-primary float-end"><i class="fas fa-user-plus"></i> Crear</button>
+            </a>
         </div>
     </div>
     <table class="table table-striped">
@@ -35,8 +37,8 @@ include_once '../view/partials/navbar.php';
                echo "<td>";
                 echo $data['boletin'] == 1 ? "Si" : "No";
                 echo "</td>";
-               echo "<td><button class='btn'><i class='fas fa-edit'></i></button></td>";
-               echo "<td><button class='btn'><i class='fas fa-trash-alt'></i></button></td>";
+               echo "<td><a href=".getUrl('Form','Form','edit', array('id' => $data['id']))."><button class='btn'><i class='fas fa-edit'></i></button></td> <a/>";
+               echo "<td><a href=".getUrl('Form','Form','delete', array('id' => $data['id']))."><button class='btn'><i class='fas fa-trash-alt'></i></button></td></a>";
                echo "</tr>";
             }
         ?>
